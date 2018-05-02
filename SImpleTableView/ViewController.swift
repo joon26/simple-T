@@ -28,7 +28,9 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
         //메모리 재활용
         let identifer = "RE"
         let cell = myTableView.dequeueReusableCell(withIdentifier: identifer, for: indexPath)
+        let myImage = UIImage(named: "\(indexPath.row+1).jpg")
         
+        cell.imageView?.image = myImage
         cell.textLabel?.text = animals[indexPath.row]
         cell.detailTextLabel?.text = country[indexPath.row]
         
@@ -39,7 +41,6 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
 
 }
 
